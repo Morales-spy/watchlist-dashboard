@@ -70,14 +70,122 @@ td.wrap{white-space:normal;min-width:260px;max-width:380px;text-align:left;color
 footer{color:var(--muted);font-size:12px;padding:10px 20px 30px;max-width:1480px;margin:0 auto}
 footer ul{margin:6px 0;padding-left:18px}
 .empty{padding:30px;text-align:center;color:var(--muted)}
+/* ===== Hero + Liquid Glass "Simplify" ===== */
+header.hero{position:relative;overflow:hidden;isolation:isolate;background:#231d5e;padding:26px 28px 24px}
+.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(38% 90% at 6% 10%,rgba(255,110,196,.95),transparent 62%),
+  radial-gradient(34% 110% at 34% 118%,rgba(255,170,90,.9),transparent 62%),
+  radial-gradient(40% 100% at 66% -12%,rgba(130,115,255,.95),transparent 62%),
+  radial-gradient(34% 110% at 97% 96%,rgba(34,211,238,.9),transparent 62%),
+  linear-gradient(120deg,#2b1f73,#3b5bdb 60%,#1f6fb8)}
+.hero-bg i{position:absolute;border-radius:50%;filter:blur(26px);opacity:.9;animation:drift 16s ease-in-out infinite alternate}
+.hero-bg i:nth-child(1){width:260px;height:260px;right:6%;top:-70px;background:#ff5fa2}
+.hero-bg i:nth-child(2){width:220px;height:220px;right:24%;bottom:-120px;background:#ffd166;animation-duration:20s;animation-delay:-6s}
+.hero-bg i:nth-child(3){width:180px;height:180px;right:-40px;bottom:-40px;background:#3ee6c4;animation-duration:13s;animation-delay:-3s}
+.hero-bg i:nth-child(4){width:200px;height:200px;left:30%;top:-110px;background:#8b7bff;animation-duration:22s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,25px) scale(1.12)}100%{transform:translate(30px,-15px) scale(.95)}}
+.hero-in{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.hero-txt{flex:1 1 560px;min-width:0}
+header.hero h1{text-shadow:0 1px 12px rgba(20,10,60,.25)}
+.glass-btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font:inherit;font-size:23px;font-weight:700;letter-spacing:.3px;color:#fff;padding:19px 42px;min-width:250px;border-radius:999px;cursor:pointer;
+  border:1px solid rgba(255,255,255,.5);
+  background:linear-gradient(180deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,.14) 48%,rgba(255,255,255,.2) 100%);
+  -webkit-backdrop-filter:blur(16px) saturate(190%);backdrop-filter:blur(16px) saturate(190%);
+  box-shadow:inset 0 1.5px 1px rgba(255,255,255,.95),inset 0 -1px 1px rgba(255,255,255,.35),inset 0 -14px 26px rgba(255,255,255,.16),inset 0 0 0 1px rgba(255,255,255,.08),
+    0 12px 32px rgba(25,10,70,.32),0 2px 6px rgba(25,10,70,.18);
+  text-shadow:0 1px 2px rgba(25,10,70,.35);
+  transition:transform .45s cubic-bezier(.2,.9,.25,1.2),box-shadow .35s ease,background .35s ease}
+.glass-btn::before{content:"";position:absolute;z-index:-1;left:6%;right:6%;top:2px;height:52%;border-radius:999px;
+  background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,0));pointer-events:none}
+.glass-btn::after{content:"";position:absolute;z-index:-1;top:-20%;bottom:-20%;left:-45%;width:32%;transform:skewX(-22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:sheen 6s ease-in-out infinite;pointer-events:none}
+@keyframes sheen{0%,62%{left:-45%}100%{left:130%}}
+.glass-btn:hover{background:linear-gradient(180deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.2) 48%,rgba(255,255,255,.26) 100%);transform:translateY(-2px) scale(1.035);
+  box-shadow:inset 0 1.5px 1px #fff,inset 0 -1px 1px rgba(255,255,255,.4),inset 0 -14px 26px rgba(255,255,255,.22),0 18px 40px rgba(25,10,70,.36),0 3px 8px rgba(25,10,70,.2)}
+.glass-btn:active{transform:scale(.965);transition-duration:.12s}
+.glass-btn:focus-visible{outline:3px solid rgba(255,255,255,.9);outline-offset:3px}
+.glass-btn .ico{font-size:24px;line-height:1}
+body.simple #hdrSub,body.simple #chips{display:none}
+/* ===== Simplified view ===== */
+#simpleView{display:none;margin:0;position:relative;overflow:hidden;isolation:isolate;min-height:calc(100vh - 110px);padding:34px 20px 36px;
+  background:radial-gradient(45% 55% at 10% 12%,#ffd1ec,transparent 70%),radial-gradient(40% 50% at 92% 8%,#c9d8ff,transparent 70%),
+    radial-gradient(45% 50% at 85% 92%,#c4f5e6,transparent 70%),radial-gradient(45% 55% at 12% 95%,#ffe3c2,transparent 70%),linear-gradient(160deg,#f3eeff,#eef6ff)}
+#simpleView .sv-blobs i{position:absolute;z-index:-1;border-radius:50%;filter:blur(40px);opacity:.75;animation:drift 18s ease-in-out infinite alternate}
+#simpleView .sv-blobs i:nth-child(1){width:380px;height:380px;left:4%;top:120px;background:#ff9ccf}
+#simpleView .sv-blobs i:nth-child(2){width:420px;height:420px;left:40%;top:260px;background:#9fb4ff;animation-delay:-5s}
+#simpleView .sv-blobs i:nth-child(3){width:360px;height:360px;right:3%;top:80px;background:#7fe3c8;animation-delay:-9s}
+#simpleView .sv-blobs i:nth-child(4){width:300px;height:300px;right:20%;bottom:40px;background:#ffc98a;animation-delay:-2s}
+body.simple #simpleView{display:block}
+body.simple main,body.simple nav,body.simple footer{display:none}
+.sv-head{max-width:1320px;margin:0 auto 22px;text-align:center}
+.sv-head h2{font-size:32px;letter-spacing:-.5px;margin:0 0 6px}
+.sv-head p{font-size:16.5px;color:#4d5468;margin:0}
+.s-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1320px;margin:0 auto}
+.s-card{position:relative;min-width:0;display:flex;flex-direction:column;gap:16px;border-radius:30px;padding:26px 26px 22px;color:#161b2e;
+  background:linear-gradient(160deg,rgba(255,255,255,.66),rgba(255,255,255,.34));
+  -webkit-backdrop-filter:blur(26px) saturate(175%);backdrop-filter:blur(26px) saturate(175%);
+  border:1px solid rgba(255,255,255,.75);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(255,255,255,.4),0 24px 60px rgba(70,50,140,.16),0 4px 14px rgba(70,50,140,.08)}
+.s-card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0) 22%)}
+.s-card>*{position:relative}
+.s-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.s-rank{display:inline-block;font-size:13px;font-weight:700;color:#4b3fb5;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);border-radius:999px;padding:5px 12px;white-space:nowrap}
+.s-tk{font-size:42px;font-weight:800;letter-spacing:-1px;line-height:1.05;margin-top:10px}
+.s-name{font-size:16px;color:#4d5468;margin-top:2px}
+.s-price{text-align:right}
+.s-price .p{font-size:32px;font-weight:800;letter-spacing:-.5px;line-height:1.1;margin-top:34px}
+.s-chg{display:inline-block;margin-top:6px;font-size:14.5px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.s-chg.up{color:#12723c;background:rgba(47,158,68,.14)}.s-chg.down{color:#b3261e;background:rgba(214,69,69,.12)}.s-chg.flat{color:#555;background:rgba(0,0,0,.06)}
+.s-verdict{border-radius:20px;padding:16px 18px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);border-left:6px solid var(--vc)}
+.s-verdict .v{font-size:23px;font-weight:800;line-height:1.2;color:var(--vc)}
+.s-verdict .v span{color:#161b2e}
+.s-verdict .x{font-size:14.5px;color:#4d5468;margin-top:6px;line-height:1.4}
+.s-verdict .q{font-size:14.5px;color:#2d3348;margin-top:8px;font-style:italic;line-height:1.4}
+.s-fact{border-top:1px solid rgba(40,40,90,.1);padding-top:14px}
+.s-fact .l{font-size:12.5px;text-transform:uppercase;letter-spacing:.6px;font-weight:700;color:#6a6f86}
+.s-fact .m{font-size:19px;font-weight:700;margin-top:5px;line-height:1.3}
+.s-fact .x{font-size:14px;color:#565d73;margin-top:5px;line-height:1.4}
+.fv{margin-top:10px;display:grid;grid-template-columns:auto 1fr auto;gap:7px 10px;align-items:center;font-size:14px}
+.fv .t{height:12px;border-radius:8px;background:rgba(40,40,90,.08);overflow:hidden}
+.fv .t i{display:block;height:100%;border-radius:8px}
+.fv b{text-align:right}
+.dots{display:flex;gap:7px;margin-top:8px}
+.dots i{width:18px;height:18px;border-radius:50%;background:rgba(40,40,90,.12);box-shadow:inset 0 1px 2px rgba(0,0,0,.08)}
+.dots i.on{background:var(--dc);box-shadow:inset 0 1px 1px rgba(255,255,255,.6),0 1px 3px rgba(0,0,0,.15)}
+.spark{display:block;width:100%;height:56px;margin-top:10px}
+.sv-note{max-width:1320px;margin:26px auto 0;text-align:center;font-size:13.5px;color:#4d5468;line-height:1.5}
+.sv-note b{color:#2d3348}
+.view-in{animation:viewIn .5s cubic-bezier(.2,.8,.2,1) both}
+.view-out{animation:viewOut .22s ease-in both}
+.s-card.view-in:nth-child(2){animation-delay:.07s}.s-card.view-in:nth-child(3){animation-delay:.14s}
+@keyframes viewIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes viewOut{to{opacity:0;transform:translateY(10px)}}
+@media(max-width:1060px){.s-cards{grid-template-columns:1fr;max-width:620px}}
+@media(max-width:640px){header.hero{padding:20px 16px}.glass-btn{width:100%;font-size:21px;padding:17px 24px}#simpleView{padding:22px 12px 28px}
+  .sv-head h2{font-size:25px}.s-card{padding:20px 18px;border-radius:24px}.s-tk{font-size:36px}.s-price .p{font-size:27px}.s-verdict .v{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.hero-bg i,#simpleView .sv-blobs i,.glass-btn::after{animation:none}.view-in,.view-out{animation-duration:.01s}}
 </style>
 </head>
 <body>
-<header>
-  <h1>Stock &amp; ETF Watchlist: Valuation &amp; Signal Dashboard</h1>
-  <p id="hdrSub"></p>
-  <div class="chips" id="chips"></div>
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="hero-in">
+    <div class="hero-txt">
+      <h1>Stock &amp; ETF Watchlist: Valuation &amp; Signal Dashboard</h1>
+      <p id="hdrSub"></p>
+      <div class="chips" id="chips"></div>
+    </div>
+    <button type="button" id="simplifyBtn" class="glass-btn" aria-pressed="false" aria-controls="simpleView"><span class="ico" aria-hidden="true">✦</span><span class="lbl">Simplify</span></button>
+  </div>
 </header>
+<section id="simpleView" aria-live="polite">
+  <div class="sv-blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="sv-head"><h2>Your top 3, in plain English</h2><p id="svSub"></p></div>
+  <div class="s-cards" id="sCards"></div>
+  <p class="sv-note" id="svNote"></p>
+</section>
 <nav>
   <a href="#screener">Portfolio Screener</a>
   <a href="#priority">Priority Ranking</a>
@@ -375,6 +483,107 @@ renderDeep();
 
 // ---------- notes
 document.getElementById('notesList').innerHTML = ["The Portfolio sheet's <b>Ticker</b> column (A) shows <code>#VALUE!</code> for 26 of 29 rows because it holds Excel linked Stocks data types, which only resolve inside Excel. The dashboard uses the <b>Symbol</b> column instead.", "TSLA, SPY, SOXL sit below the Portfolio table (Table1 covers rows 2\u201327) and hold hard-typed values rather than formulas. They are included. Several of their inputs look like placeholders: identical Growth % / Fwd 5Y Growth (25% / 18%) and Support % (\u22126%), and SPY has EPS = 0 and PEG = 0.", "Symbol / Symbol 2 mismatch in the Portfolio sheet: VTI (Symbol 2 = XLI).", "The Portfolio sheet's Asking Prices come from different days. Of the 17 tickers that also have their own sheet, 11 match the 2026-09-10 close; 1 matches the 2026-09-15 close, and 5 (ORCL, XLK, XLI, VOO, SCHD) match no close in the 14-day history. The per-ticker sheets and the Priority sheet run through 2026-09-15. So prices, conviction scores and ratings can differ between sections (e.g. NVDA: 218.36 in Portfolio vs 212.17 in its sheet).", "PE outliers kept as-is: CRWD PE 3664 (EPS 0.057).", "Ticker sheets with Forward P/E = 0 (treated as n/a): XLI, XLV, SCHD, AIQ, VXUS, XRT. PEG = 0 (n/a): QQQ, XLI, XLV, SCHD, XLK, XSD, AIQ, VOO, VXUS, XRT.", "Covered-call / CSP yields of exactly 1.80% / 1.60% repeat for XLI, XLV, SCHD, AIQ, VXUS, XRT and may be placeholders.", "'Contingent buy levels' are the numbers in column O (rows 11\u201313) of the QQQ, GOOGL, TSM, VXUS sheets. They line up with the levels drawn on the embedded 'Executed Orders' images. The embedded images (Fear &amp; Greed chart, priority ranking graphic, order-history charts) are screenshots with no underlying data, so they are not reproduced.", "Fear &amp; Greed (33, Fear) and VIX (17.49, Neutral) are read from the Portfolio sheet headers and the hidden 'Gauge Setup' sheet. The workbook's VBA modules are empty and were not run. Its Power Query connection ('Query1') was never refreshed.", "Derived metrics: Upside to IV = (Intrinsic Value \u2212 Asking Price) \u00f7 Asking Price; Upside to Mid FMV uses Midpoint FMV; vs 50D MA = (Price \u2212 50D MA) \u00f7 50D MA; Period change = last \u00f7 first close in each sheet's 14-day table \u2212 1."].map(n=>`<li>${n}</li>`).join('');
+
+// ---------- Simplify view (top 3 from the Priority sheet; data picked in build.py)
+(function(){
+  const S = [{"rank":1,"ticker":"TSLA","name":"Tesla, Inc.","price":356.58,"chg":-0.0092,"rating":"DCA","conviction":60,"alloc":"1.0% - 1.5%","strategy":"Dollar-Cost Average into weekly tranches","rsi":52.6,"valuation":"Fair to Slightly Undervalued","intrinsic":371,"ct":5,"rsiStatus":"Neutral","comment":"Dollar-Cost Average into weekly tranches","medVal":"DCA","pfPrice":356.58},{"rank":2,"ticker":"GOOGL","name":"Alphabet Inc. Class A","price":344.98,"chg":-0.0072,"rating":"Buy","conviction":67,"alloc":"2.0% - 3.0%","strategy":"Buy on pullbacks below 20-day MA","rsi":48.7,"valuation":"Undervalued","intrinsic":432,"ct":6,"rsiStatus":"Neutral","comment":"Exceptional alignment; strong opportunity with broad signal confirmation.","medVal":"Strong Buy","pfPrice":344.98,"spark":[341.78,340.43,346.37,339.13,334.8,336.9,342.26,338.46,338.36,330.65,332.6,338.5,349.39,344.98],"sparkFrom":"2026-08-26","sparkTo":"2026-09-15"},{"rank":3,"ticker":"NVDA","name":"NVIDIA Corporation","price":212.17,"chg":0.0006,"rating":"Buy","conviction":74,"alloc":"2.0% - 3.0%","strategy":"Buy on pullbacks below 20-day MA","rsi":49.6,"valuation":"Undervalued","intrinsic":302,"ct":5,"rsiStatus":"Neutral","comment":"Strong setup with multiple signals aligned; attractive opportunity.","medVal":"Buy","pfPrice":218.36,"spark":[209.43,227.73,217.31,220.53,217.2,224.16,228.19,230.1,225.48,223.42,218.36,218.29,210.96,212.17],"sparkFrom":"2026-08-26","sparkTo":"2026-09-15"}];
+  const fmtDate = d=>{ const [y,m,dd]=String(d).split('-').map(Number); return new Date(Date.UTC(y,m-1,dd)).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}); };
+  const RATING_PLAIN = {
+    'Exceptional Buy':"The spreadsheet's model gives this its highest buy rating.",
+    'Strong Buy':"The spreadsheet's model sees a strong buying opportunity.",
+    'Buy':"The spreadsheet's model says this is a good time to buy.",
+    'DCA':"DCA (dollar-cost averaging) means buying in small, regular amounts instead of all at once.",
+    'Watch':"Keep an eye on it. The model doesn't say buy yet.",
+    'Wait':"The model suggests holding off on new money for now.",
+    'Trim':"The model suggests selling a small part of the position.",
+    'Avoid':"The model suggests staying away for now."};
+  const RSI_PLAIN = {
+    'Oversold':['Beaten down recently','Sellers have pushed it down hard lately. That can mean a bargain, or more trouble.'],
+    'Attractive':['Cooled off recently','It has pulled back a bit lately, which the spreadsheet treats as a good entry zone.'],
+    'Neutral':['Steady: not hot, not beaten down','Recent buying and selling are roughly balanced.'],
+    'Extended':['Has run up fast','It has climbed quickly lately and may be due for a breather.']};
+  const planGloss = s=>{ const g=[]; s=String(s||'');
+    if(/dollar-cost/i.test(s)) g.push('buy a fixed amount on a schedule (here: weekly) instead of all at once');
+    const ma=s.match(/(\d+)-day MA/i); if(ma) g.push(`“${ma[1]}-day MA” is the average closing price over the last ${ma[1]} trading days`);
+    if(/pullback/i.test(s)) g.push('a pullback is a short-term dip in price');
+    if(/bid\/mid/i.test(s)) g.push('bid/mid = place your order at or just below the middle of the current buy/sell quotes');
+    if(/RSI/.test(s)) g.push('RSI is a 0–100 momentum gauge');
+    return g.length? g.join('; ')+'.' : ''; };
+  const spark = (a,col)=>{ const w=300,h=56,p=4, mn=Math.min(...a), mx=Math.max(...a), r=(mx-mn)||1;
+    const pts=a.map((v,i)=>[p+i*(w-2*p)/(a.length-1), p+(h-2*p)*(1-(v-mn)/r)]);
+    const d=pts.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ');
+    const id='sg'+Math.random().toString(36).slice(2,8);
+    return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="14-day closing prices"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".28"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs><path d="${d} L${pts[pts.length-1][0].toFixed(1)} ${h} L${pts[0][0].toFixed(1)} ${h} Z" fill="url(#${id})"/><path d="${d}" fill="none" stroke="${col}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`; };
+
+  function card(c){
+    const vc=rc(c.rating);
+    const chgCls=c.chg>0?'up':c.chg<0?'down':'flat', arrow=c.chg>0?'▲':c.chg<0?'▼':'■';
+    let facts=[];
+    // Fact 1: verdict
+    const verdict=`<div class="s-verdict" style="--vc:${vc}"><div class="v">Rated ${esc(c.rating)}${c.valuation?` <span>· ${esc(c.valuation)}</span>`:''}</div>
+      <div class="x">${esc(RATING_PLAIN[c.rating]||'')}</div>
+      ${c.comment&&c.comment!==c.strategy?`<div class="q">“${esc(c.comment)}”</div>`:''}</div>`;
+    // Fact 2: price vs estimated fair value
+    if(c.intrinsic){
+      const d=(c.price-c.intrinsic)/c.intrinsic, mx=Math.max(c.price,c.intrinsic), a=Math.abs(d*100);
+      const words = a<0.5? 'About equal to its estimated fair value' : `${a.toFixed(0)}% ${d<0?'below':'above'} its estimated fair value`;
+      facts.push(`<div class="s-fact"><div class="l">Price vs. estimated fair value</div><div class="m">${words}</div>
+        <div class="fv"><span>Price</span><div class="t"><i style="width:${(c.price/mx*100).toFixed(1)}%;background:#5b6178"></i></div><b>${usd(c.price)}</b>
+        <span>Fair value</span><div class="t"><i style="width:${(c.intrinsic/mx*100).toFixed(1)}%;background:${d<0?'#2f9e44':'#e8590c'}"></i></div><b>${usd(c.intrinsic,0)}</b></div>
+        <div class="x">Fair value = the intrinsic-value estimate in your Portfolio sheet (what the business may really be worth). ${d<0?'Below it = potentially on sale.':'Above it = paying more than the estimate.'}</div></div>`);
+    }
+    // Fact 3: conviction count
+    if(c.ct!=null){
+      const dc=c.ct>=6?'#2f9e44':c.ct>=4?'#74b816':c.ct>=3?'#e8a317':'#d64545';
+      facts.push(`<div class="s-fact"><div class="l">How many signals agree</div><div class="m">${c.ct} of 7 signals positive</div>
+        <div class="dots" style="--dc:${dc}" aria-label="${c.ct} of 7">${[1,2,3,4,5,6,7].map(n=>`<i class="${n<=c.ct?'on':''}"></i>`).join('')}</div>
+        <div class="x">The 7 checks: discount to fair value, spot in its 1-year price range, market mood, market volatility, momentum, rating and valuation. More dots = stronger case.</div></div>`);
+    }
+    // Fact 4: momentum
+    const rp=RSI_PLAIN[c.rsiStatus];
+    if(rp||c.spark){
+      let chgTxt='';
+      if(c.spark){ const r=(c.spark[c.spark.length-1]-c.spark[0])/c.spark[0]; chgTxt=`${spct(r,1)} over the last ${c.spark.length} trading days (${fmtDate(c.sparkFrom).replace(/, \d{4}/,'')} to ${fmtDate(c.sparkTo).replace(/, \d{4}/,'')})`; }
+      facts.push(`<div class="s-fact"><div class="l">Recent momentum</div><div class="m">${rp?rp[0]:'Recent price path'}</div>
+        ${c.spark?spark(c.spark,(c.spark[c.spark.length-1]>=c.spark[0])?'#2f9e44':'#d64545'):''}
+        <div class="x">${c.spark?chgTxt+'. ':`No daily-history sheet for ${esc(c.ticker)} in the workbook, so no chart. `}${rp?rp[1]+' ':''}${c.rsi!=null?`Momentum gauge (RSI) ${num(c.rsi,1)} of 100: under 30 = beaten down, over 60 = running hot.`:''}</div></div>`);
+    }
+    // Fact 5: the plan
+    const g=planGloss(c.strategy);
+    facts.push(`<div class="s-fact"><div class="l">The plan in your spreadsheet</div><div class="m">${esc(c.strategy)}</div>
+      <div class="x">${c.alloc?`Target size: <b>${esc(c.alloc)}</b> of your portfolio. `:''}${g?esc(g.charAt(0).toUpperCase()+g.slice(1)):''}</div></div>`);
+    return `<article class="s-card">
+      <div class="s-top"><div><span class="s-rank">#${c.rank} on your Priority list</span><div class="s-tk">${esc(c.ticker)}</div><div class="s-name">${esc(c.name||'')}</div></div>
+        <div class="s-price"><div class="p">${usd(c.price)}</div><span class="s-chg ${chgCls}">${arrow} ${pct(Math.abs(c.chg),2)} on the day</span></div></div>
+      ${verdict}${facts.join('')}</article>`;
+  }
+  document.getElementById('sCards').innerHTML = S.map(card).join('');
+  document.getElementById('svSub').textContent = `The ${S.length} highest-ranked names on your Priority sheet, with just the essentials.`;
+  const diff=S.filter(c=>c.medVal&&c.medVal!==c.rating).map(c=>`${esc(c.ticker)} is rated ${esc(c.medVal)} there`);
+  const pdiff=S.filter(c=>c.pfPrice!=null&&Math.abs(c.pfPrice-c.price)>0.005).map(c=>`${esc(c.ticker)} ${usd(c.pfPrice)}`);
+  document.getElementById('svNote').innerHTML = `Data from your spreadsheet (latest date in it: <b>${fmtDate(M.histEnd)}</b>), not live market prices. Price, day change, rating, plan and target size come from the Priority sheet; valuation, fair value, signal count and momentum status come from the Portfolio sheet${diff.length?` (its Medallion rating can differ: ${diff.join('; ')})`:''}${pdiff.length?`. The Portfolio sheet lists an older price for ${pdiff.join(', ')}`:''}. Not investment advice.`;
+
+  const btn=document.getElementById('simplifyBtn'), lbl=btn.querySelector('.lbl'), ico=btn.querySelector('.ico');
+  const sv=document.getElementById('simpleView'), full=[document.querySelector('nav'),document.querySelector('main'),document.getElementById('notes')];
+  let on=false, busy=false;
+  function setSimple(v){
+    if(v===on||busy) return; busy=true;
+    const out = v? full : [sv];
+    out.forEach(el=>el.classList.add('view-out'));
+    setTimeout(()=>{
+      out.forEach(el=>el.classList.remove('view-out'));
+      on=v; document.body.classList.toggle('simple',v);
+      btn.setAttribute('aria-pressed',String(v)); lbl.textContent=v?'Show full dashboard':'Simplify'; ico.textContent=v?'←':'✦';
+      const inn = v? [sv,...sv.querySelectorAll('.s-card')] : full;
+      inn.forEach(el=>{ el.classList.remove('view-in'); void el.offsetWidth; el.classList.add('view-in'); });
+      setTimeout(()=>inn.forEach(el=>el.classList.remove('view-in')),800);
+      window.scrollTo({top:0,behavior:'instant'});
+      busy=false;
+    },220);
+  }
+  btn.addEventListener('click',()=>setSimple(!on));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&on) setSimple(false); });
+})();
 </script>
 </body>
 </html>
